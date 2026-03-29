@@ -2,6 +2,11 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
 from apscheduler.triggers.interval import IntervalTrigger
 import logging
+import asyncio
+
+from app.core.database import SessionLocal
+from app.services.candle_ingestor import candle_ingestor
+from app.services.signal_pipeline import signal_pipeline
 
 logger = logging.getLogger(__name__)
 
@@ -10,10 +15,20 @@ scheduler = BackgroundScheduler(timezone="UTC")
 
 def refresh_candles():
     logger.info("📊 Refreshing candles...")
+    db = SessionLocal()
+    try:
+        asyncio.run(candle_ingestor.refresh_candles(db, "H1", 100))
+    finally:
+        db.close()
 
 
 def run_signal_scanner():
     logger.info("🔍 Running signal scanner...")
+    db = SessionLocal()
+    try:
+        asyncio.run(signal_pipeline.run(db))
+    finally:
+        db.close()
 
 
 def check_outcomes():
