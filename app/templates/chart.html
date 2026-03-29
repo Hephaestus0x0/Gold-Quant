@@ -25,9 +25,48 @@
         });
         
         const candlestickSeries = chart.addCandlestickSeries();
+        const signalSeries = chart.addLineSeries({
+            color: '#26a69a',
+            lineWidth: 2,
+        });
         
-        // TODO: Fetch candle data from /chart/candles
-        // candlestickSeries.setData(data);
+        async function fetchChartData() {
+            try {
+                const candlesResponse = await fetch('/chart/candles?limit=500&timeframe=5min');
+                const candles = await candlesResponse.json();
+                
+                const formattedCandles = candles.map(c => ({
+                    time: new Date(c.timestamp).getTime() / 1000,
+                    open: c.open,
+                    high: c.high,
+                    low: c.low,
+                    close: c.close
+                }));
+                
+                candlestickSeries.setData(formattedCandles);
+                
+                const signalsResponse = await fetch('/chart/signals?limit=100');
+                const signals = await signalsResponse.json();
+                
+                signals.forEach(signal => {
+                    const marker = {
+                        time: new Date(signal.created_at).getTime() / 1000,
+                        position: signal.direction === 'long' ? 'belowBar' : 'aboveBar',
+                        color: signal.direction === 'long' ? '#26a69a' : '#ef5350',
+                        shape: signal.direction === 'long' ? 'arrowUp' : 'arrowDown',
+                        text: `${signal.direction.toUpperCase()} @ ${signal.entry_price}`
+                    };
+                    
+                    candlestickSeries.setMarkers([marker]);
+                });
+                
+            } catch (error) {
+                console.error('Error fetching chart data:', error);
+            }
+        }
+        
+        fetchChartData();
+        setInterval(fetchChartData, 60000);
         
         window.addEventListener('resize', () => {
             chart.applyOptions({ width: window.innerWidth, height: window.innerHeight });

@@ -21,19 +21,19 @@
     
     <div class="metrics">
         <div class="metric">
-            <div class="metric-value">--</div>
+            <div class="metric-value" id="active-signals">--</div>
             <div class="metric-label">Active Signals</div>
         </div>
         <div class="metric">
-            <div class="metric-value">--%</div>
+            <div class="metric-value" id="win-rate">--%</div>
             <div class="metric-label">Win Rate</div>
         </div>
         <div class="metric">
-            <div class="metric-value">-- pips</div>
+            <div class="metric-value" id="total-pnl">-- pips</div>
             <div class="metric-label">Total P&L</div>
         </div>
         <div class="metric">
-            <div class="metric-value status-ok">OK</div>
+            <div class="metric-value status-ok" id="system-status">OK</div>
             <div class="metric-label">System Status</div>
         </div>
     </div>
@@ -47,13 +47,13 @@
                 <th>Entry</th>
                 <th>SL</th>
                 <th>TP1</th>
-                <th>Strategy</th>
                 <th>Confidence</th>
+                <th>Status</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="signals-table">
             <tr>
-                <td colspan="7" style="text-align: center; color: #8892b0;">No signals yet</td>
+                <td colspan="7" style="text-align: center; color: #8892b0;">Loading...</td>
             </tr>
         </tbody>
     </table>
@@ -61,6 +61,55 @@
     <div style="margin-top: 40px; color: #8892b0;">
         <p>🤖 Powered by Twelve Data API</p>
         <p>📱 Alerts via Telegram: @GoldQuantSignalBot</p>
+        <p id="last-update" style="font-size: 12px;">Last update: --</p>
     </div>
+    
+    <script>
+        async function updateDashboard() {
+            try {
+                const response = await fetch('/dashboard/data');
+                const data = await response.json();
+                
+                document.getElementById('active-signals').textContent = data.active_signals;
+                document.getElementById('win-rate').textContent = data.win_rate + '%';
+                document.getElementById('total-pnl').textContent = data.total_pnl_pips + ' pips';
+                
+                const statusEl = document.getElementById('system-status');
+                statusEl.textContent = data.scheduler === 'running' ? 'ONLINE' : 'OFFLINE';
+                statusEl.className = data.scheduler === 'running' ? 'status-ok' : 'status-error';
+                
+                const tableBody = document.getElementById('signals-table');
+                if (data.recent_signals.length === 0) {
+                    tableBody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: #8892b0;">No signals yet</td></tr>';
+                } else {
+                    tableBody.innerHTML = data.recent_signals.map(signal => {
+                        const time = new Date(signal.created_at).toLocaleTimeString();
+                        const dirColor = signal.direction === 'long' ? '#26a69a' : '#ef5350';
+                        return `
+                            <tr>
+                                <td>${time}</td>
+                                <td style="color: ${dirColor}; font-weight: bold;">${signal.direction.toUpperCase()}</td>
+                                <td>${signal.entry_price.toFixed(2)}</td>
+                                <td>${signal.stop_loss ? signal.stop_loss.toFixed(2) : '--'}</td>
+                                <td>${signal.take_profit_1 ? signal.take_profit_1.toFixed(2) : '--'}</td>
+                                <td>${(signal.confidence * 100).toFixed(0)}%</td>
+                                <td>${signal.status}</td>
+                            </tr>
+                        `;
+                    }).join('');
+                }
+                
+                document.getElementById('last-update').textContent = 'Last update: ' + new Date().toLocaleTimeString();
+                
+            } catch (error) {
+                console.error('Error fetching dashboard data:', error);
+                document.getElementById('system-status').textContent = 'ERROR';
+                document.getElementById('system-status').className = 'status-error';
+            }
+        }
+        
+        updateDashboard();
+        setInterval(updateDashboard, 10000);
+    </script>
 </body>
 </html>

@@ -1,0 +1,448 @@
+{
+  "strategy": "VWAP Enhanced EMA",
+  "symbol": "XAU/USD",
+  "interval": "1h",
+  "start_date": "2025-09-10 21:00:00",
+  "end_date": "2026-03-29 19:00:00",
+  "total_candles": 4320,
+  "trades": [
+    {
+      "entry_time": "2025-10-23 19:00:00",
+      "direction": "SHORT",
+      "entry_price": 4089.63,
+      "exit_price": 4126.877142857144,
+      "stop_loss": 4126.877142857144,
+      "take_profit_1": 4039.967142857143,
+      "take_profit_2": 4015.135714285714,
+      "outcome": "LOSS",
+      "pips": -3724.7142857143444,
+      "bars_held": 1,
+      "profit_loss": -91.0770481856398,
+      "equity": 9908.92295181436,
+      "confidence": 65.3462016732752,
+      "session": "NY",
+      "price_position": "PREMIUM"
+    },
+    {
+      "entry_time": "2025-10-25 07:00:00",
+      "direction": "SHORT",
+      "entry_price": 4097.3,
+      "exit_price": 4050.6314285714293,
+      "stop_loss": 4132.301428571428,
+      "take_profit_1": 4050.6314285714293,
+      "take_profit_2": 4027.2971428571436,
+      "outcome": "WIN",
+      "pips": 4666.857142857089,
+      "bars_held": 28,
+      "profit_loss": 21.78636883458239,
+      "equity": 10021.786368834582,
+      "confidence": 50.24081484703803,
+      "session": "ASIAN",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2025-10-29 16:00:00",
+      "direction": "SHORT",
+      "entry_price": 3955.12,
+      "exit_price": 3984.176071428571,
+      "stop_loss": 3984.176071428571,
+      "take_profit_1": 3916.3785714285714,
+      "take_profit_2": 3897.007857142857,
+      "outcome": "LOSS",
+      "pips": -2905.607142857116,
+      "bars_held": 1,
+      "profit_loss": -51.83813322217975,
+      "equity": 9948.16186677782,
+      "confidence": 51.789874308677305,
+      "session": "LONDON",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2025-11-01 20:00:00",
+      "direction": "LONG",
+      "entry_price": 4003.75,
+      "exit_price": 3994.9289285714285,
+      "stop_loss": 3994.9289285714285,
+      "take_profit_1": 4015.5114285714285,
+      "take_profit_2": 4021.392142857143,
+      "outcome": "LOSS",
+      "pips": -882.1071428571486,
+      "bars_held": 5,
+      "profit_loss": -73.75594687434022,
+      "equity": 9926.24405312566,
+      "confidence": 50.21877555720862,
+      "session": "NY",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2025-11-04 07:00:00",
+      "direction": "SHORT",
+      "entry_price": 3999.2,
+      "exit_price": 3969.6657142857143,
+      "stop_loss": 4021.3507142857143,
+      "take_profit_1": 3969.6657142857143,
+      "take_profit_2": 3954.8985714285714,
+      "outcome": "WIN",
+      "pips": 2953.428571428549,
+      "bars_held": 6,
+      "profit_loss": -0.4501537320265925,
+      "equity": 9999.549846267973,
+      "confidence": 51.29588651064358,
+      "session": "ASIAN",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2025-11-12 21:00:00",
+      "direction": "LONG",
+      "entry_price": 4123.55391,
+      "exit_price": 4158.333850714285,
+      "stop_loss": 4106.163939642856,
+      "take_profit_1": 4146.740537142857,
+      "take_profit_2": 4158.333850714285,
+      "outcome": "WIN",
+      "pips": 3477.994071428566,
+      "bars_held": 5,
+      "profit_loss": 83.89062570566603,
+      "equity": 10083.890625705666,
+      "confidence": 51.27147839919954,
+      "session": "NY",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2025-11-21 13:00:00",
+      "direction": "SHORT",
+      "entry_price": 4069.44166,
+      "exit_price": 4032.7104,
+      "stop_loss": 4096.990105,
+      "take_profit_1": 4032.7104,
+      "take_profit_2": 4014.34477,
+      "outcome": "WIN",
+      "pips": 3673.126000000002,
+      "bars_held": 5,
+      "profit_loss": 174.909010862797,
+      "equity": 10174.909010862797,
+      "confidence": 51.26670886775011,
+      "session": "LONDON",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2025-11-22 17:00:00",
+      "direction": "SHORT",
+      "entry_price": 4065.86266,
+      "exit_price": 4048.5668457142856,
+      "stop_loss": 4078.8345207142856,
+      "take_profit_1": 4048.5668457142856,
+      "take_profit_2": 4039.9189385714285,
+      "outcome": "WIN",
+      "pips": 1729.5814285714187,
+      "bars_held": 19,
+      "profit_loss": 218.19215919863382,
+      "equity": 10218.192159198634,
+      "confidence": 50.41636795342286,
+      "session": "NY",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2025-11-28 02:00:00",
+      "direction": "SHORT",
+      "entry_price": 4155.91303,
+      "exit_price": 4169.645923214285,
+      "stop_loss": 4169.645923214285,
+      "take_profit_1": 4137.602505714285,
+      "take_profit_2": 4128.447243571428,
+      "outcome": "LOSS",
+      "pips": -1373.2893214285468,
+      "bars_held": 9,
+      "profit_loss": 184.42693342216444,
+      "equity": 10184.426933422164,
+      "confidence": 50.19699865796127,
+      "session": "ASIAN",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2025-11-28 03:00:00",
+      "direction": "LONG",
+      "entry_price": 4157.69685,
+      "exit_price": 4183.553588571429,
+      "stop_loss": 4144.768480714286,
+      "take_profit_1": 4174.934675714286,
+      "take_profit_2": 4183.553588571429,
+      "outcome": "WIN",
+      "pips": 2585.673857142865,
+      "bars_held": 8,
+      "profit_loss": 247.7639380710989,
+      "equity": 10247.763938071099,
+      "confidence": 50.431355301718106,
+      "session": "ASIAN",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2026-01-14 00:00:00",
+      "direction": "LONG",
+      "entry_price": 4593.14728,
+      "exit_price": 4631.790736428571,
+      "stop_loss": 4573.825551785714,
+      "take_profit_1": 4618.909584285714,
+      "take_profit_2": 4631.790736428571,
+      "outcome": "WIN",
+      "pips": 3864.345642857097,
+      "bars_held": 1,
+      "profit_loss": 333.9812951664135,
+      "equity": 10333.981295166413,
+      "confidence": 50.87748209844557,
+      "session": "OTHER",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2026-01-16 08:00:00",
+      "direction": "SHORT",
+      "entry_price": 4605.76867,
+      "exit_price": 4562.654624285715,
+      "stop_loss": 4627.325692857144,
+      "take_profit_1": 4577.025972857143,
+      "take_profit_2": 4562.654624285715,
+      "outcome": "WIN",
+      "pips": 4311.404571428557,
+      "bars_held": 18,
+      "profit_loss": 430.7164492509928,
+      "equity": 10430.716449250993,
+      "confidence": 51.24545423935906,
+      "session": "ASIAN",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2026-01-19 09:00:00",
+      "direction": "LONG",
+      "entry_price": 4595.49304,
+      "exit_price": 4594.976353214286,
+      "stop_loss": 4594.976353214286,
+      "take_profit_1": 4596.181955714286,
+      "take_profit_2": 4596.52641357143,
+      "outcome": "LOSS",
+      "pips": -51.66867857142279,
+      "bars_held": 1,
+      "profit_loss": 429.54368861182957,
+      "equity": 10429.54368861183,
+      "confidence": 51.032192067137174,
+      "session": "LONDON",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2026-02-10 22:00:00",
+      "direction": "LONG",
+      "entry_price": 5046.6968,
+      "exit_price": 5008.873009999999,
+      "stop_loss": 5008.873009999999,
+      "take_profit_1": 5097.128519999999,
+      "take_profit_2": 5122.34438,
+      "outcome": "LOSS",
+      "pips": -3782.379000000037,
+      "bars_held": 4,
+      "profit_loss": 351.37674379479904,
+      "equity": 10351.376743794799,
+      "confidence": 51.50264378445379,
+      "session": "NY",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2026-02-12 21:00:00",
+      "direction": "LONG",
+      "entry_price": 5073.73164,
+      "exit_price": 5047.391418214285,
+      "stop_loss": 5047.391418214285,
+      "take_profit_1": 5108.851935714286,
+      "take_profit_2": 5126.412083571428,
+      "outcome": "LOSS",
+      "pips": -2634.0221785714675,
+      "bars_held": 4,
+      "profit_loss": 297.6376857276591,
+      "equity": 10297.63768572766,
+      "confidence": 51.15929052688605,
+      "session": "NY",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2026-02-28 00:00:00",
+      "direction": "LONG",
+      "entry_price": 5188.36492,
+      "exit_price": 5228.72878,
+      "stop_loss": 5168.18299,
+      "take_profit_1": 5215.27416,
+      "take_profit_2": 5228.72878,
+      "outcome": "WIN",
+      "pips": 4036.3860000000386,
+      "bars_held": 1,
+      "profit_loss": 377.7500934488653,
+      "equity": 10377.750093448865,
+      "confidence": 51.02592431631225,
+      "session": "OTHER",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2026-03-05 02:00:00",
+      "direction": "SHORT",
+      "entry_price": 5148.50195,
+      "exit_price": 5190.386799285714,
+      "stop_loss": 5190.386799285714,
+      "take_profit_1": 5092.655484285714,
+      "take_profit_2": 5064.7322514285715,
+      "outcome": "LOSS",
+      "pips": -4188.484928571415,
+      "bars_held": 11,
+      "profit_loss": 293.32349658433304,
+      "equity": 10293.323496584333,
+      "confidence": 53.59974291389775,
+      "session": "ASIAN",
+      "price_position": "AT_VALUE"
+    },
+    {
+      "entry_time": "2026-03-18 01:00:00",
+      "direction": "LONG",
+      "entry_price": 5016.21322,
+      "exit_price": 4990.24417642857,
+      "stop_loss": 4990.24417642857,
+      "take_profit_1": 5050.838611428571,
+      "take_profit_2": 5068.151307142857,
+      "outcome": "LOSS",
+      "pips": -2596.904357142921,
+      "bars_held": 1,
+      "profit_loss": 240.03473977634167,
+      "equity": 10240.034739776342,
+      "confidence": 50.43375790256964,
+      "session": "ASIAN",
+      "price_position": "AT_VALUE"
+    }
+  ],
+  "equity_curve": [
+    {
+      "datetime": "2025-10-23 19:00:00",
+      "equity": 9908.92295181436
+    },
+    {
+      "datetime": "2025-10-25 07:00:00",
+      "equity": 10021.786368834582
+    },
+    {
+      "datetime": "2025-10-29 16:00:00",
+      "equity": 9948.16186677782
+    },
+    {
+      "datetime": "2025-11-01 20:00:00",
+      "equity": 9926.24405312566
+    },
+    {
+      "datetime": "2025-11-04 07:00:00",
+      "equity": 9999.549846267973
+    },
+    {
+      "datetime": "2025-11-12 21:00:00",
+      "equity": 10083.890625705666
+    },
+    {
+      "datetime": "2025-11-21 13:00:00",
+      "equity": 10174.909010862797
+    },
+    {
+      "datetime": "2025-11-22 17:00:00",
+      "equity": 10218.192159198634
+    },
+    {
+      "datetime": "2025-11-28 02:00:00",
+      "equity": 10184.426933422164
+    },
+    {
+      "datetime": "2025-11-28 03:00:00",
+      "equity": 10247.763938071099
+    },
+    {
+      "datetime": "2026-01-14 00:00:00",
+      "equity": 10333.981295166413
+    },
+    {
+      "datetime": "2026-01-16 08:00:00",
+      "equity": 10430.716449250993
+    },
+    {
+      "datetime": "2026-01-19 09:00:00",
+      "equity": 10429.54368861183
+    },
+    {
+      "datetime": "2026-02-10 22:00:00",
+      "equity": 10351.376743794799
+    },
+    {
+      "datetime": "2026-02-12 21:00:00",
+      "equity": 10297.63768572766
+    },
+    {
+      "datetime": "2026-02-28 00:00:00",
+      "equity": 10377.750093448865
+    },
+    {
+      "datetime": "2026-03-05 02:00:00",
+      "equity": 10293.323496584333
+    },
+    {
+      "datetime": "2026-03-18 01:00:00",
+      "equity": 10240.034739776342
+    }
+  ],
+  "metrics": {
+    "total_trades": 18,
+    "wins": 9,
+    "losses": 9,
+    "win_rate": 50.0,
+    "avg_win_pips": 3477.6441428571316,
+    "avg_loss_pips": 2459.9085595238244,
+    "profit_factor": 1.4137290304523817,
+    "max_drawdown": 1.828078736512328,
+    "sharpe_ratio": 4.415909312301074,
+    "expectancy": 508.8677916666536,
+    "total_pips": 9159.620249999762,
+    "final_capital": 10240.034739776342,
+    "return_pct": 2.4003473977634164,
+    "max_consecutive_losses": 3,
+    "session_performance": {
+      "NY": {
+        "total_trades": 6,
+        "wins": 2,
+        "losses": 4,
+        "win_rate": 33.33333333333333,
+        "avg_pips": -969.2745178571689
+      },
+      "ASIAN": {
+        "total_trades": 7,
+        "wins": 4,
+        "losses": 3,
+        "win_rate": 57.14285714285714,
+        "avg_pips": 908.383647959168
+      },
+      "LONDON": {
+        "total_trades": 3,
+        "wins": 1,
+        "losses": 2,
+        "win_rate": 33.33333333333333,
+        "avg_pips": 238.6167261904878
+      },
+      "OTHER": {
+        "total_trades": 2,
+        "wins": 2,
+        "losses": 0,
+        "win_rate": 100.0,
+        "avg_pips": 3950.365821428568
+      }
+    },
+    "price_position_performance": {
+      "PREMIUM": {
+        "total_trades": 1,
+        "wins": 0,
+        "win_rate": 0.0
+      },
+      "AT_VALUE": {
+        "total_trades": 17,
+        "wins": 9,
+        "win_rate": 52.94117647058824
+      }
+    }
+  }
+}

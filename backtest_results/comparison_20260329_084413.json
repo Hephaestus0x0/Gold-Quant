@@ -1,0 +1,98 @@
+{
+  "timestamp": "20260329_084413",
+  "ema_strategy": {
+    "total_trades": 155,
+    "wins": 53,
+    "losses": 96,
+    "win_rate": 34.193548387096776,
+    "avg_win_pips": 5888.739198113198,
+    "avg_loss_pips": 2995.2188906250044,
+    "profit_factor": 1.0854214280635102,
+    "max_drawdown": 9.661063428173494,
+    "sharpe_ratio": 0.2819666388658392,
+    "expectancy": 42.52161713709097,
+    "total_pips": -14096.44100000101,
+    "final_capital": 10241.89866912957,
+    "return_pct": 2.418986691295704,
+    "max_consecutive_losses": 10,
+    "session_performance": {
+      "null": {
+        "total_trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "win_rate": 0.0,
+        "avg_pips": NaN
+      }
+    },
+    "price_position_performance": {
+      "null": {
+        "total_trades": 0,
+        "wins": 0,
+        "win_rate": 0.0
+      }
+    }
+  },
+  "vwap_enhanced": {
+    "total_trades": 18,
+    "wins": 9,
+    "losses": 9,
+    "win_rate": 50.0,
+    "avg_win_pips": 3477.6441428571316,
+    "avg_loss_pips": 2459.9085595238244,
+    "profit_factor": 1.4137290304523817,
+    "max_drawdown": 1.828078736512328,
+    "sharpe_ratio": 4.415909312301074,
+    "expectancy": 508.8677916666536,
+    "total_pips": 9159.620249999762,
+    "final_capital": 10240.034739776342,
+    "return_pct": 2.4003473977634164,
+    "max_consecutive_losses": 3,
+    "session_performance": {
+      "NY": {
+        "total_trades": 6,
+        "wins": 2,
+        "losses": 4,
+        "win_rate": 33.33333333333333,
+        "avg_pips": -969.2745178571689
+      },
+      "ASIAN": {
+        "total_trades": 7,
+        "wins": 4,
+        "losses": 3,
+        "win_rate": 57.14285714285714,
+        "avg_pips": 908.383647959168
+      },
+      "LONDON": {
+        "total_trades": 3,
+        "wins": 1,
+        "losses": 2,
+        "win_rate": 33.33333333333333,
+        "avg_pips": 238.6167261904878
+      },
+      "OTHER": {
+        "total_trades": 2,
+        "wins": 2,
+        "losses": 0,
+        "win_rate": 100.0,
+        "avg_pips": 3950.365821428568
+      }
+    },
+    "price_position_performance": {
+      "PREMIUM": {
+        "total_trades": 1,
+        "wins": 0,
+        "win_rate": 0.0
+      },
+      "AT_VALUE": {
+        "total_trades": 17,
+        "wins": 9,
+        "win_rate": 52.94117647058824
+      }
+    }
+  },
+  "improvement": {
+    "win_rate": 15.806451612903224,
+    "profit_factor": 0.3283076023888716,
+    "total_pips": 23256.06125000077
+  }
+}
