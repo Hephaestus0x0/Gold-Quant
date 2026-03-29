@@ -7,6 +7,7 @@ from app.models.signal import Signal
 from app.models.strategy import Strategy
 from app.strategies import EMAMomentumStrategy
 from app.services.telegram_notifier import telegram_notifier
+from app.services.circuit_breaker import circuit_breaker
 from app.core.config import settings
 
 logger = logging.getLogger(__name__)
@@ -24,6 +25,10 @@ class SignalPipeline:
         """Run signal scanner on latest candles."""
         
         logger.info("Running signal scanner...")
+        
+        if circuit_breaker.is_active(db):
+            logger.warning("⚠️ Circuit breaker active - skipping signal generation")
+            return
         
         candles = db.query(Candle).filter(
             Candle.symbol == settings.SYMBOL,

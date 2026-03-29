@@ -7,14 +7,24 @@ import asyncio
 from app.core.database import SessionLocal
 from app.services.candle_ingestor import candle_ingestor
 from app.services.signal_pipeline import signal_pipeline
+from app.services.outcome_detector import outcome_detector
 
 logger = logging.getLogger(__name__)
 
 scheduler = BackgroundScheduler(timezone="UTC")
 
 
-def refresh_candles():
-    logger.info("📊 Refreshing candles...")
+def refresh_candles_m15():
+    logger.info("📊 Refreshing M15 candles...")
+    db = SessionLocal()
+    try:
+        asyncio.run(candle_ingestor.refresh_candles(db, "M15", 100))
+    finally:
+        db.close()
+
+
+def refresh_candles_h1():
+    logger.info("📊 Refreshing H1 candles...")
     db = SessionLocal()
     try:
         asyncio.run(candle_ingestor.refresh_candles(db, "H1", 100))
@@ -32,7 +42,12 @@ def run_signal_scanner():
 
 
 def check_outcomes():
-    logger.info("📈 Checking outcomes...")
+    logger.info("📈 Checking signal outcomes...")
+    db = SessionLocal()
+    try:
+        asyncio.run(outcome_detector.check_outcomes(db))
+    finally:
+        db.close()
 
 
 def run_backtests():
@@ -51,19 +66,28 @@ def health_digest():
     logger.info("💊 Sending health digest...")
 
 
+# Match QuantLive's precise timing
 scheduler.add_job(
-    refresh_candles,
-    trigger=IntervalTrigger(minutes=30),
+    refresh_candles_m15,
+    trigger=CronTrigger(minute='1,16,31,46'),
+    id="refresh_candles_M15",
+    name="Refresh M15 candles",
+    replace_existing=True
+)
+
+scheduler.add_job(
+    refresh_candles_h1,
+    trigger=CronTrigger(minute='1'),
     id="refresh_candles_H1",
-    name="Refresh Candles",
+    name="Refresh H1 candles",
     replace_existing=True
 )
 
 scheduler.add_job(
     run_signal_scanner,
-    trigger=IntervalTrigger(minutes=30),
+    trigger=CronTrigger(minute='2,32'),
     id="run_signal_scanner",
-    name="Signal Scanner",
+    name="Run signal scanner (30min)",
     replace_existing=True
 )
 
@@ -71,7 +95,7 @@ scheduler.add_job(
     check_outcomes,
     trigger=IntervalTrigger(seconds=90),
     id="check_outcomes",
-    name="Check Outcomes",
+    name="Check signal outcomes",
     replace_existing=True
 )
 

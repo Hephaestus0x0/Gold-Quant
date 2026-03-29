@@ -6,6 +6,7 @@ import time
 
 from app.core.database import get_db
 from app.core.scheduler import scheduler
+from app.services.circuit_breaker import circuit_breaker
 
 router = APIRouter()
 
@@ -32,6 +33,8 @@ async def status(db: Session = Depends(get_db)):
         for job in scheduler.get_jobs()
     ]
     
+    cb_status = circuit_breaker.get_status(db)
+    
     return {
         "status": "ok",
         "uptime_seconds": time.time() - start_time,
@@ -39,6 +42,7 @@ async def status(db: Session = Depends(get_db)):
         "scheduler": scheduler_status,
         "jobs": jobs,
         "active_signals": 0,
+        "circuit_breaker": cb_status,
         "last_candle_fetch": None,
         "last_signal_generated": None,
         "timestamp": datetime.utcnow()
