@@ -11,8 +11,7 @@ alembic==1.13.1
 # Scheduling
 apscheduler==3.10.4
 
-# HTTP Client
-httpx==0.26.0
+# HTTP Client (httpx version managed by python-telegram-bot)
 requests==2.31.0
 
 # Data Processing
